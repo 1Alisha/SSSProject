@@ -1,0 +1,173 @@
+<title>
+    Payment
+  </title>
+  <link rel="icon" href="/Users/anmolgupta/Desktop/Project/544becd5b48c0_thumb900-removebg-preview.png" type="image">  
+          <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <style>
+  body{
+  font-family: 'Work Sans', sans-serif;
+  background-image: url(https://render.fineartamerica.com/images/rendered/default/poster/10/8/break/images-medium-5/indian-saree-jijo-george.jpg  ); 
+  /* background: -webkit-linear-gradient(to right, #3a7bd5, #00d2ff);  */
+  /* background: linear-gradient(to right, #3a7bd5, #00d2ff);  */
+  background-size: cover;
+  }
+  
+  @font-face {
+    font-family: 'Work Sans';
+    font-style: normal;
+    font-weight: 400;
+    src: url(https://fonts.gstatic.com/s/worksans/v13/QGY_z_wNahGAdqQ43RhVcIgYT2Xz5u32K0nXBiAJoI3ZKyHaQfhf.woff) format('woff');
+  
+  }
+  .container{
+      padding-top: 120px;
+  }
+  .card{
+    background:#c8e2cf;
+      border-radius:14px;
+       max-width: 300px; 
+       display:block;
+        margin:auto;
+    padding:60px; 
+    padding-left:20px; 
+    padding-right:20px;
+    box-shadow: 2px 10px 40px black;
+     z-index:99;
+  }
+  
+  .logo-card{max-width:50px;
+       margin-bottom:15px;
+        margin-top: -19px;}
+  
+  label{display:flex; 
+      font-size:11px; 
+      color:rgb(14, 28, 224); opacity:;}
+  
+  input{font-family: 'Work Sans', sans-serif;background:transparent;
+   border:none; 
+   border-bottom:1px solid transparent;
+    color:#0a1541;
+   transition: border-bottom .4s;}
+  input:focus{border-bottom:1px solid #1abc9c; 
+      outline:none;}
+  
+  .cardnumber{display:block; 
+      font-size:20px; 
+      margin-bottom:8px;
+   }
+  
+  .name{display:block; 
+      font-size:15px; 
+      max-width: 200px; 
+      float:left;
+       margin-bottom:15px;}
+  
+  .cvv{float:left;}
+  .cvv{width:50px; 
+      margin-top:-5px; 
+      font-size:15px;}
+      .otp{
+        float: left;
+        width: 50px;
+        font-size: 12px;
+  
+      }
+  
+  .receipt{background: #9ba1b677;
+       border-radius:4px;
+       padding:5%; 
+       padding-top:200px; 
+       max-width:600px; 
+       display:block; 
+       margin:auto; 
+       margin-top:-180px; 
+      z-index:-999; 
+      position:relative;}
+  
+  .col{width:50%; float:left;}
+  .bought-item{background:#f5f5f5; padding:2px;}
+  .bought-items{margin-top:-3px;}
+  
+  .cost{color:#01060e;}
+  .seller{color: #01070f;}
+  .description{font-size: 13px;}
+  .price{font-size:12px;}
+  .info{text-align:center;
+    font-size: large;
+  }
+  .proceed{position:absolute;
+       transform:translate(300px, 10px); 
+       width:50px; 
+       height:50px;
+        border-radius:50%;
+         background:#1abc9c; 
+         border:none;
+         color:white;
+         transition: box-shadow .2s, transform .4s; 
+         cursor:pointer;}
+  .proceed:active{outline:none; }
+  .proceed:focus{outline:none;  
+      box-shadow: inset 0px 0px 5px white;}
+  .bttn{filter:invert(100%); padding-top:2px;}
+  #countdown{
+    text-align: center;
+    font-size: x-large;
+    font-weight: bold;
+    color: yellow;
+    }
+  
+  @media (max-width: 600px){
+    .proceed{transform:translate(250px, 10px);}
+    .col{display:block; margin:auto; width:100%; text-align:center;}
+  }
+  </style>
+  <div class="container">
+      <div class="card">
+       <a href="file:///Users/anmolgupta/Desktop/Project/homie.html"> <button class="proceed"><svg class="bttn" width="24" height="24" viewBox="0 0 24 24">
+      <!-- Arrow in circle -->
+        <path d="M4,11V13H16L10.5,18.5L11.92,19.92L19.84,12L11.92,4.08L10.5,5.5L16,11H4Z"></path>
+    </svg></button></a>
+       <img src="https://seeklogo.com/images/V/VISA-logo-62D5B26FE1-seeklogo.com.png" class="logo-card">
+     <label>Card number:</label>
+     <input id="user" type="text" class="input cardnumber"  placeholder="1234 5678 9101 1121" required>
+     <label>Name:</label>
+     <input class="input name"  placeholder="Daniel Gillies" required>
+     <label class="cvv">cvv:</label>
+     <input class="input cvv cvv" maxlength="3" placeholder="321" required><br>
+     <label class="otp">OTP:</label>
+     <input class="input cvv cvv" maxlength="6" placeholder="xxxxxx" required>
+      </div>
+      <div class="receipt">
+        <div class="col"><p>Cost:</p>
+        <h2 class="cost">₹4990</h2><br>
+        <p>Name:</p>
+        <h2 class="seller">Shiva Suits and Sarees</h2>
+        </div>
+        <div class="col">
+          <p>Bought Items:</p>
+          <h3 class="bought-items">Enchanting Beauty</h3>
+          <p class="bought-items description">Exclusive Premium Saree</p>
+          <p class="bought-items price">₹4990</p><br>
+          <h3 class="bought-items"></h3>
+          <p class="bought-items description"></p>
+          <p class="bought-items price"></p><br>
+        </div>
+        <p class="info">This information will be shared to your email</p><br>
+    <div id="countdown"></div>
+  <script>
+  var timeleft = 120;
+  var downloadTimer = setInterval(function(){
+    if(timeleft <= 0){
+      clearInterval(downloadTimer);
+      alert('Session failed, Try again')
+    } else {
+      document.getElementById("countdown").innerHTML = " Session will expire in " + timeleft +" seconds" ;
+    }
+    timeleft -= 1;
+  }, 15);
+  </script>
+      </div>
+      
+      
+    </div>
+    
